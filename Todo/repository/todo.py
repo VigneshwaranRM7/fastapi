@@ -29,22 +29,10 @@ def update(id,user):
     
     return 'Successfully updated..'
 
-# def filter(value):
 
-#     userss=blogs_collection.find()
-#     users=list(userss)
-    
-#     result=[]
-
-#     for user in users:
-#         result.append(user['title'])
-#     l=[i for i in result if value in i ]    
-    
-
-#     return l
 
 def filter(value):
-    # Use a list comprehension to directly filter titles from the cursor
+   
     result = [
         user['title']
         for user in blogs_collection.find({}, {"title": 1})
